@@ -1,9 +1,21 @@
 /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+@font-face {
+    font-family: 'BebasNeue';
+    src: url('fonts/BebasNeue%20Regular.otf') format('truetype');
+}
+@font-face {
+    font-family: 'Indie Flower';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Indie Flower'), local('IndieFlower'), url('fonts/IndieFlower.woff2') format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
 
 html {
     color: #222;
     font-size: 1em;
     line-height: 1.4;
+    margin:0;
 }
 
 ::-moz-selection {
@@ -51,17 +63,131 @@ textarea {
     padding: 0.2em 0;
 }
 
+html{
+    height: 100%;
+    width: 100%;
+}
 
+body{
+    height: 100%;
+    width: 100%;
+}
 
+body > header{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: blanchedalmond no-repeat top center;
+    text-align: center;
+    z-index: 3;
+}
+h1,h2,h3{
+    margin: 0 0 30px;
+}
 
+body > header > h1 {
+    padding: 20% 0 0 0;
+    font-size: 5em;
+    line-height: 1em;
+    font-weight: 700;
+    font-family: "BebasNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 10px;
+}
 
+body > header > p{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size:1.2em;
+}
 
+nav{
+    position:fixed;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
 
+nav > ul {
+    list-style: none;
+}
 
+main {
+    width: 100%;
+    height: 100%;
+}
 
+article {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-shadow: #222222 0 0 5px 0;
+}
 
+#day-0{
+    background: url(http://www.blogvoyageur.fr/wp-content/uploads/2013/08/Toulouse-1.jpg) no-repeat center fixed;
+    background-size: cover;
+}
 
+#day-1{
+    background: url(../img/10941784_10153033966248914_1457203632_n.jpg) no-repeat center fixed;
+    background-size: cover;
+}
 
+article > header {
+    width: 100%;
+}
+article > header > h2 {
+    padding: 1.5em 0 0 2em;
+    color: white;
+    font-weight: 400;
+    font-size:4em;
+    font-family: 'Indie Flower',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 0;
+    text-shadow: rgb(0, 0, 0) 0 5px 7px;
+}
+
+article > header > p {
+    position: absolute;
+    top: 0.5em;
+    left: 2em;
+    color: white;
+    font-family: 'Indie Flower',"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:2em;
+    line-height: 0;
+    transform: rotate(-10deg);
+}
+article > aside {
+    position: absolute;
+    top: 1.5em;
+    right: 3em;
+    margin: 0.8em;
+}
+article > aside > p {
+    font-family: "BebasNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color:white;
+    font-size:2.5em;
+}
+
+article > aside > p:after{
+    content: "km";
+    font-size:0.5em;
+}
+
+article > .section-list {
+
+    position: absolute;
+    top:20%;
+    right: 3em;
+
+}
+.section-list > section {
+    display: block;
+    background: white;
+    min-width:30em;
+    padding: 2em;
+    margin: 0.8em;
+}
 
 
 
