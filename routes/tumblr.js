@@ -21,14 +21,12 @@ router.get('/', function(req, res, next) {
     var todays_post = response.posts;
     var last_date=undefined;
     var nbDay=0;
-    console.log(todays_post);
     var nbPostsForCurrentDay=0;
     todays_post.forEach(function(post,index,array) {
       
       var post_date = post.date.split("-");
       var date = new Date(post_date[0], (post_date[1] -1), post_date[2].split(" ")[0]);
       if(last_date==undefined || date.getTime() != last_date.getTime()) {
-        console.log("Last date =" + last_date + " | date = " + date);
         last_date = date;
         nbDay++;
         nbPostsForCurrentDay=0;
@@ -37,7 +35,6 @@ router.get('/', function(req, res, next) {
       }
       days[nbDay].posts[nbPostsForCurrentDay] = post;
       nbPostsForCurrentDay++;
-      console.log("Day " + nbDay + " " + last_date + " - " + nbPostsForCurrentDay);
     });
     
     var data =[];
@@ -75,7 +72,7 @@ router.get('/', function(req, res, next) {
 
     }
 
-    console.log(data);
+    console.log(JSON.stringify(data,null));
       
   });
   
