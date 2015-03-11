@@ -5,12 +5,12 @@ var oauth = {
   consumer_key: '45EWPfOgq6rRvQCAGlno5Vr4EXcVlOqpJO7xEUyueD264i8pU9',
   consumer_secret: 'fyGnV64yEa4Itf2ukcppDll2jYgf24cEsh4KS2GRHlYSf4NgOk',
 };
-
-var blog = new tumblr.Blog('equipe.tumblr.com', oauth);
+var city = ["Toulouse", "Genova", "Cinq Terres", "Firenze", "Roma", "Ancona","Venise", "Montagnes"];
+var blog = new tumblr.Blog('magic-micky.tumblr.com', oauth);
 
 
 router.get('/', function(req, res, next) {
-  blog.text({}, function(error, response) {
+  blog.posts({}, function(error, response) {
     if(error) throw new Error(error);
     
     var days = [];
@@ -21,12 +21,14 @@ router.get('/', function(req, res, next) {
     var todays_post = response.posts;
     var last_date=undefined;
     var nbDay=0;
+    console.log(todays_post);
     var nbPostsForCurrentDay=0;
     todays_post.forEach(function(post,index,array) {
       
       var post_date = post.date.split("-");
       var date = new Date(post_date[0], (post_date[1] -1), post_date[2].split(" ")[0]);
-      if(date != last_date || last_date == undefined) {
+      if(last_date==undefined || date.getTime() != last_date.getTime()) {
+        console.log("Last date =" + last_date + " | date = " + date);
         last_date = date;
         nbDay++;
         nbPostsForCurrentDay=0;
@@ -35,10 +37,46 @@ router.get('/', function(req, res, next) {
       }
       days[nbDay].posts[nbPostsForCurrentDay] = post;
       nbPostsForCurrentDay++;
+      console.log("Day " + nbDay + " " + last_date + " - " + nbPostsForCurrentDay);
     });
     
-    console.log(days);
-  
+    var data =[];
+
+    for(var i= nbDay; i>0; i--) {
+      var daily_post = days[i].posts;
+      var current_data={quote:[],text:[], images:[], timelapse:[]};
+      current_data.date = days[i].date;
+      current_data.city = city[nbDay-i];
+      var nbImages=0;
+      var nbTimelapse=0;
+      var nbText=0;
+      var nbQuote=0;
+      daily_post.forEach(function(post, index,array) {
+          if(post.type == "photo" && post.tags.indexOf("feature") > -1) {
+            current_data.featured = image;
+          }
+          else if(post.type== "photo") {
+            //TODO : there can be more than one photo
+            current_data.images[nbImages]=post.photos;
+            nbImages++;
+          } else if(post.type == "video") {
+            current_data.timelapse[nbTimelapse] = post;
+            nbTimelapse++;
+          } else if(post.type =="text") {
+            current_data.text[nbText] = post.body;
+            nbText++;
+          } else if(post.type == "quote") {
+            current_data.quote[nbQuote] = post.text;
+            nbQuote++;
+          };
+      });
+
+      data[i] = current_data;
+
+    }
+
+    console.log(data);
+      
   });
   
   
