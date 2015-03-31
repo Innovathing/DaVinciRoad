@@ -85,7 +85,7 @@ h1,h2,h3{
     margin: 0 0 30px;
 }
 
-body > header > h1 {
+body  header h1 {
     padding: 20% 0 0 0;
     font-size: 5em;
     line-height: 1em;
@@ -94,7 +94,7 @@ body > header > h1 {
     letter-spacing: 10px;
 }
 
-body > header > p{
+body header p{
     text-transform: uppercase;
     font-weight: 700;
     font-size:1.2em;
@@ -108,7 +108,7 @@ nav{
     z-index: 2;
 }
 
-nav > ul {
+nav ul {
     list-style: none;
 }
 
@@ -130,14 +130,19 @@ article {
 }
 
 #day-1{
-    background: url(../img/10941784_10153033966248914_1457203632_n.jpg) no-repeat center fixed;
+    background: url(http://www.legrandtour.fr/images/galeries/187/florence6.jpg) no-repeat center fixed;
     background-size: cover;
 }
 
-article > header {
+#day-2{
+    background: url(http://www.blogvoyageur.fr/wp-content/uploads/2013/08/Toulouse-1.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+article header {
     width: 100%;
 }
-article > header > h2 {
+article header h2 {
     padding: 1.5em 0 0 2em;
     color: white;
     font-weight: 400;
@@ -147,7 +152,7 @@ article > header > h2 {
     text-shadow: rgb(0, 0, 0) 0 5px 7px;
 }
 
-article > header > p {
+article header p {
     position: absolute;
     top: 0.5em;
     left: 2em;
@@ -157,36 +162,34 @@ article > header > p {
     line-height: 0;
     transform: rotate(-10deg);
 }
-article > aside {
+article aside {
     position: absolute;
     top: 1.5em;
     right: 3em;
     margin: 0.8em;
 }
-article > aside > p {
+article aside p {
     font-family: "BebasNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color:white;
     font-size:2.5em;
 }
 
-article > aside > p:after{
+article aside p:after{
     content: "km";
     font-size:0.5em;
 }
 
-article > .section-list {
-
-    position: absolute;
-    top:20%;
-    right: 3em;
+article .section-list {
+    float:right;
+    margin-right:5em;
 
 }
-.section-list > section {
+.section-list section {
     display: block;
     background: white;
-    min-width:30em;
     padding: 2em;
     margin: 0.8em;
+    width: 30em;
 }
 
 
