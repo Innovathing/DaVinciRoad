@@ -124,17 +124,17 @@ article {
     box-shadow: #222222 0 0 5px 0;
 }
 
-#day-0{
+article[data-anchor="day-0"]{
     background: url(http://www.blogvoyageur.fr/wp-content/uploads/2013/08/Toulouse-1.jpg) no-repeat center fixed;
     background-size: cover;
 }
 
-#day-1{
+article[data-anchor="day-1"]{
     background: url(http://www.legrandtour.fr/images/galeries/187/florence6.jpg) no-repeat center fixed;
     background-size: cover;
 }
 
-#day-2{
+article[data-anchor="day-2"]{
     background: url(http://www.blogvoyageur.fr/wp-content/uploads/2013/08/Toulouse-1.jpg) no-repeat center fixed;
     background-size: cover;
 }
@@ -193,7 +193,10 @@ article .section-list {
 }
 
 
-
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    background-color: #ffffff;
+}
 
 
 /* ==========================================================================
