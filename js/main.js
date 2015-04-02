@@ -11,7 +11,6 @@ $(document).ready(function() {
         recordHistory: false,
         menu:"#menu",
 
-        css3:false,
         scrollOverflow: true
     });
     $('.material-design-hamburger__icon').on("click",toogleMenu);
