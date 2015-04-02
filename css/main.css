@@ -143,6 +143,7 @@ article header {
     width: 100%;
 }
 article header h2 {
+    position: absolute;
     padding: 1.5em 0 0 2em;
     color: white;
     font-weight: 400;
@@ -162,26 +163,10 @@ article header p {
     line-height: 0;
     transform: rotate(-10deg);
 }
-article aside {
-    position: absolute;
-    top: 1.5em;
-    right: 3em;
-    margin: 0.8em;
-}
-article aside p {
-    font-family: "BebasNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color:white;
-    font-size:2.5em;
-}
 
-article aside p:after{
-    content: "km";
-    font-size:0.5em;
-}
-
-article .section-list {
+.section-list {
     float:right;
-    margin-right:5em;
+    margin: 10em 5em 10em 0;
 
 }
 .section-list section {
@@ -197,7 +182,6 @@ article .section-list {
 .fp-slidesNav ul li a span {
     background-color: #ffffff;
 }
-
 
 /* ==========================================================================
    Media Queries
