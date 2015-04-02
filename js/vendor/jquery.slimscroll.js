@@ -2,12 +2,12 @@
  * Dual licensed under the MIT (http://www.opensource.org/licenses/mit-license.php)
  * and GPL (http://www.opensource.org/licenses/gpl-license.php) licenses.
  *
- * Version: 1.3.2 (modified for fullpage.js)
+ * Version: 1.3.3
  *
  */
 (function($) {
 
-  jQuery.fn.extend({
+  $.fn.extend({
     slimScroll: function(options) {
 
       var defaults = {
@@ -129,9 +129,6 @@
               }
               else if ('destroy' in options)
               {
-                // clear slimscroll mouse event listeners
-                detachWheel();
-
                 // remove slimscroll elements
                 bar.remove();
                 rail.remove();
@@ -145,9 +142,16 @@
 
             return;
         }
+        else if ($.isPlainObject(options))
+        {
+            if ('destroy' in options)
+            {
+            	return;
+            }
+        }
 
         // optionally set height to the parent's height
-        o.height = (options.height == 'auto') ? me.parent().height() : options.height;
+        o.height = (o.height == 'auto') ? me.parent().height() : o.height;
 
         // wrap content
         var wrapper = $(divS)
@@ -249,24 +253,6 @@
         }, function(){
           isOverBar = false;
         });
-
-        // allow scrolling on page load
-        // based on hack in http://stackoverflow.com/a/6593995/1547641
-        // Chrome seems to return an rgba() value while other browsers return
-        // the "transparent" value.
-        if (
-
-           me.css('background-color') == 'transparent' ||
-           me.css('background-color') == 'rgba(0, 0, 0, 0)'
-        ) {
-           isOverPanel = true;
-           showBar();
-           hideBar();
-        }
-        else {
-          isOverPanel = false;
-          hideBar();
-        }
 
         // show on parent mouseover
         me.hover(function(){
@@ -409,19 +395,6 @@
           }
         }
 
-        function detachWheel()
-        {
-          if (window.removeEventListener)
-          {
-            this.removeEventListener('DOMMouseScroll', _onWheel);
-            this.removeEventListener('mousewheel', _onWheel);
-          }
-          else
-          {
-            document.detachEvent('onmousewheel', _onWheel);
-          }
-        }
-
         function getBarHeight()
         {
           // calculate scrollbar height and make sure it is not too small
@@ -490,8 +463,8 @@
     }
   });
 
-  jQuery.fn.extend({
-    slimscroll: jQuery.fn.slimScroll
+  $.fn.extend({
+    slimscroll: $.fn.slimScroll
   });
 
 })(jQuery);

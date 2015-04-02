@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
     $('main').fullpage({
-        sectionSelector: 'article',
+        sectionSelector: '.section',
         anchors:['day-0','day-1','day-2'],
 
         navigation: true,
