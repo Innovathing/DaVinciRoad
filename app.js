@@ -10,6 +10,10 @@ var users = require('./routes/users');
 var tumblr = require('./routes/tumblr');
 var app = express();
 
+// bower include
+app.use(express.static(__dirname + '/public'));
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

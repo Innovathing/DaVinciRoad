@@ -1,7 +1,17 @@
 doctype html
-html
+html(class='no-js', lang='en')
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title Da Vinci Road
+    block styles
+      style(src='/bower_components/normalize.css/normalize.css')
+      style(src='include /bower_components/fullpage.js/jquery.fullPage.css')
+      style(src='include /css/main.css')
+    script(src='/bower_components/modernizr/modernizr.js')
   body
+    include browserupgrade.jade
     block content
+    block scripts
+      script(src='/bower_components/jquery/dist/jquery.min.js')
+      script(src='/bower_components/slimscroll/jquery.slimscroll.min.js')
+      script(src='/bower_components/fullpage.js/jquery.fullPage.min.js')
+      script(src='/js/main.js')
