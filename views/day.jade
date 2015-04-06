@@ -6,7 +6,12 @@ include section-text
 mixin day(current_day)
   - var date = current_day.date
   - var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
-  article.section
+  - var bgUrl = ''
+
+  if(current_day.featured != undefined)
+    - bgUrl = current_day.featured.url;
+
+  article.section(data-bg=bgUrl)
     header
       p
         time=date.getDate() + ' ' + monthNames[date.getMonth()]

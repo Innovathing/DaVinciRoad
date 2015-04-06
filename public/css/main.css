@@ -89,6 +89,8 @@ article {
     position: relative;
     box-shadow: #222222 0 0 5px 0;
     overflow: scroll;
+    background-size: cover;
+    background-color: #474747;
 }
 
 article header {
@@ -96,23 +98,6 @@ article header {
     min-height: 25vh;
     position: relative;
 }
-
-
-article[data-anchor="day-0"]{
-    background: url(http://hotel-oursblanc.com/cache/4f153a330210c3f7527b76c9ed0283bf/se-balader-a-toulouse.jpg) no-repeat center fixed;
-    background-size: cover;
-}
-
-article[data-anchor="day-1"]{
-    background: red no-repeat center fixed;
-    background-size: cover;
-}
-
-article[data-anchor="day-2"]{
-    background: yellow no-repeat center fixed;
-    background-size: cover;
-}
-
 
 article header h2 {
     padding: 1em 0 0 0;
