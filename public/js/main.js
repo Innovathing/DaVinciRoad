@@ -1,13 +1,26 @@
 
 $(document).ready(function() {
     var $modal = $('.mask-modal');
+    var anchors = [];
+    var tooltips = [];
+
+    if(days == undefined){
+        console.error("Unknown days var");
+        return;
+    }
+
+    for(var i = 0; i<days.length; i++){
+        anchors[i] = "day-"+days[i].id;
+        tooltips[i] = "Day "+days[i].id+" - "+days[i].city;
+    }
+
     $('main').fullpage({
         sectionSelector: '.section',
-        anchors:['day-0','day-1','day-2'],
+        anchors:anchors,
 
         navigation: true,
         navigationPosition: 'left',
-        navigationTooltips: ['Day 0', 'Day 1', 'Day 2'],
+        navigationTooltips: tooltips,
         recordHistory: false,
         menu:"#menu",
 
