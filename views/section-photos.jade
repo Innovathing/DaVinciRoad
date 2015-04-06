@@ -1,6 +1,7 @@
-mixin section-photos(post)
+mixin section-photos(post,index)
   section.photos
     h3 Pics of Day
     .gird-photos
       for pic in post
-        .thumbnail: img(src=pic.alt_sizes[2].url)
+        .thumbnail
+            a(href=pic.alt_sizes[0].url, data-lightbox="image-"+index): img(src=pic.alt_sizes[2].url)
