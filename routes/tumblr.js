@@ -58,7 +58,7 @@ router.get('/', function(req, res, next) {
             current_data.images[nbImages]=post.photos;
             nbImages++;
           } else if(post.type == "video") {
-            current_data.timelapse[nbTimelapse] = post;
+            current_data.timelapse[nbTimelapse] = post.video_url;
             nbTimelapse++;
           } else if(post.type =="text") {
             current_data.text[nbText] = post.body;
