@@ -1,7 +1,11 @@
-mixin section-timelapse
+mixin section-timelapse(timelapses)
   section.timelapse
     .gird-photos
-      .thumbnail: img(src="http://data.esaip.org/52de/83f3/3b034/thumbnail/x1024-y600-tfit-k16/campus_toulouse-ville.jpg")
+      .thumbnail 
+        video(controls="controls")
+          source(src=timelapses[0], type="video/mp4")
       .thumbnail
         h3 Timelapse Day
-      .thumbnail: img(src="http://www.royalevents.fr/medias/images/toulouse.jpg")
+      .thumbnail 
+        video(controls="controls")
+          source(src=timelapses[1], type="video/mp4")

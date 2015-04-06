@@ -1,0 +1,7 @@
+mixin section-quote(post)
+  section.quote
+    if post.from
+      h3 Quote by #{post.from}
+    else
+      h3 Quote
+    .text #{post.text}

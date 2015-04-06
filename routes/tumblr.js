@@ -64,7 +64,7 @@ router.get('/', function(req, res, next) {
             current_data.text[nbText] = post.body;
             nbText++;
           } else if(post.type == "quote") {
-            current_data.quote[nbQuote] = post.text;
+            current_data.quote[nbQuote] = {from:post.source, text:post.text};
             nbQuote++;
           };
       });

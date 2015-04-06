@@ -309,6 +309,16 @@ article header p {
 
 }
 
+.thumbnail video {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    transform: translate(-50%,-50%);
+}
+
+
 /* ==========================================================================
    Media Queries
    ========================================================================== */

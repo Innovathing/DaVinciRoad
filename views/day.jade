@@ -1,5 +1,7 @@
 include section-photos
 include section-timelapse
+include section-quote
+include section-text
 
 mixin day(current_day)
   - var date = current_day.date
@@ -13,4 +15,10 @@ mixin day(current_day)
     .section-list
       for images in current_day.images
         +section-photos(images)
-      +section-timelapse
+      for q in current_day.quote
+        +section-quote(q)
+      for t in current_day.text
+        +section-text(t)
+      if current_day.timelapse.length >= 2
+        +section-timelapse(current_day.timelapse)
+  
