@@ -30,6 +30,13 @@ $(document).ready(function() {
     $modal.on("click",toogleMenu);
     $('.menu-link').on("click",toogleMenu);
 
+    $('.fp-section').on('inview',function(event,visible){
+        console.log("toto");
+        if(visible==true){
+            $(this).addClass("inview");
+        }
+    });
+
     function toogleMenu(){
         $modal.toggleClass("background--blur");
         $("#menu").toggleClass("menu--on");
