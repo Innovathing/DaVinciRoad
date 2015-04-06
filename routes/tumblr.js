@@ -1,18 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var tumblr = require('tumblr');
-var oauth = {
-  consumer_key: '45EWPfOgq6rRvQCAGlno5Vr4EXcVlOqpJO7xEUyueD264i8pU9',
-  consumer_secret: 'fyGnV64yEa4Itf2ukcppDll2jYgf24cEsh4KS2GRHlYSf4NgOk',
-};
-var city = ["Toulouse", "Genova", "Cinq Terres", "Firenze", "Roma", "Ancona","Venise", "Montagnes"];
-var blog = new tumblr.Blog('magic-micky.tumblr.com', oauth);
+var config = require('../config.json');
+
+var city = config.cities;
+var blog = new tumblr.Blog(config.tumblrUrl, config.tumblrOAuthKeys);
 
 
 router.get('/', function(req, res, next) {
   blog.posts({}, function(error, response) {
     if(error) throw new Error(error);
-    console.log(response); 
+    console.log(response);
     var days = [];
     var today = new Date();
     var dd = today.getDate();
