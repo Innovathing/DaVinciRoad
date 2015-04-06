@@ -41,31 +41,29 @@ router.get('/', function(req, res, next) {
 
     for(var i= nbDay; i>=0; i--) {
       var daily_post = days[i].posts;
-      var current_data={quote:[],text:[], images:[], timelapse:[]};
+      var current_data={posts:[], timelapse:[]};
       current_data.date = days[i].date;
       current_data.city = city[nbDay-i];
       if(current_data.city==undefined) current_data.city="undefined";
-      var nbImages=0;
+      
       var nbTimelapse=0;
-      var nbText=0;
-      var nbQuote=0;
+      var nbPosts=0;
       daily_post.forEach(function(post, index,array) {
           if(post.type == "photo" && post.tags.indexOf("featured") > -1) {
             current_data.featured = post.photos[0].original_size;
           }
           else if(post.type== "photo") {
-            //TODO : there can be more than one photo
-            current_data.images[nbImages]=post.photos;
-            nbImages++;
+            current_data.posts[nbPosts] = {type:"photo", data: post.photos};
+            nbPosts++;
           } else if(post.type == "video") {
             current_data.timelapse[nbTimelapse] = post.video_url;
             nbTimelapse++;
           } else if(post.type =="text") {
-            current_data.text[nbText] = post.body;
-            nbText++;
+            current_data.posts[nbPosts] = {type:"text", data: post.body};
+            nbPosts++;
           } else if(post.type == "quote") {
-            current_data.quote[nbQuote] = {from:post.source, text:post.text};
-            nbQuote++;
+            current_data.posts[nbPosts] = {type:"quote", data:{from:post.source, text:post.text}};
+            nbPosts++;
           };
       });
 

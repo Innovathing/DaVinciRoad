@@ -13,12 +13,12 @@ mixin day(current_day)
       h2=current_day.city
 
     .section-list
-      for images in current_day.images
-        +section-photos(images)
-      for q in current_day.quote
-        +section-quote(q)
-      for t in current_day.text
-        +section-text(t)
+      for p in current_day.posts
+          case p.type
+            when "quote": +section-quote(p.data)
+            when "photo": +section-photos(p.data)
+            default: +section-text(p.data)
+      
       if current_day.timelapse.length >= 2
         +section-timelapse(current_day.timelapse)
   
