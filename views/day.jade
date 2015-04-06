@@ -6,7 +6,7 @@ include section-text
 mixin day(current_day)
   - var date = current_day.date
   - var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
-  - var bgUrl = ''
+  - var bgUrl = null
 
   if(current_day.featured != undefined)
     - bgUrl = current_day.featured.url;

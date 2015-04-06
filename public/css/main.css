@@ -282,10 +282,17 @@ article header p {
     position: absolute;
     left: 50%;
     top: 50%;
-    height: 100%;
-    width: auto;
     transform: translate(-50%,-50%);
+    height: auto;
+    width: auto;
 }
+img.portrait {
+    height: 100%;
+}
+img.paysage {
+    width: 100%;
+}
+
 .gird-photos {
     display: flex;
     flex-direction: row;
@@ -298,7 +305,7 @@ article header p {
     position: absolute;
     left: 50%;
     top: 50%;
-    height: 100%;
+    height: auto;
     width: auto;
     transform: translate(-50%,-50%);
 }
