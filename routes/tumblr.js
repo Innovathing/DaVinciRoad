@@ -6,13 +6,13 @@ var oauth = {
   consumer_secret: 'fyGnV64yEa4Itf2ukcppDll2jYgf24cEsh4KS2GRHlYSf4NgOk',
 };
 var city = ["Toulouse", "Genova", "Cinq Terres", "Firenze", "Roma", "Ancona","Venise", "Montagnes"];
-var blog = new tumblr.Blog('valley-vegetarian.tumblr.com', oauth);
+var blog = new tumblr.Blog('magic-micky.tumblr.com', oauth);
 
 
 router.get('/', function(req, res, next) {
   blog.posts({}, function(error, response) {
     if(error) throw new Error(error);
-    
+    console.log(response); 
     var days = [];
     var today = new Date();
     var dd = today.getDate();
@@ -39,7 +39,7 @@ router.get('/', function(req, res, next) {
     
     var data =[];
 
-    for(var i= nbDay; i>0; i--) {
+    for(var i= nbDay; i>=0; i--) {
       var daily_post = days[i].posts;
       var current_data={quote:[],text:[], images:[], timelapse:[]};
       current_data.date = days[i].date;
@@ -50,8 +50,8 @@ router.get('/', function(req, res, next) {
       var nbText=0;
       var nbQuote=0;
       daily_post.forEach(function(post, index,array) {
-          if(post.type == "photo" && post.tags.indexOf("feature") > -1) {
-            current_data.featured = image;
+          if(post.type == "photo" && post.tags.indexOf("featured") > -1) {
+            current_data.featured = post.photos[0].original_size;
           }
           else if(post.type== "photo") {
             //TODO : there can be more than one photo
