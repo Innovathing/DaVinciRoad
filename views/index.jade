@@ -9,10 +9,10 @@ block content
       span.material-design-hamburger__layer
 
   ul#menu.menu.menu--off
-    - for (var x = 0; x < 3; x++)
+    - for (var x = 0; x < days.length; x++)
       li(data-menuanchor="day-"+x): a.menu-link(href="#day-"+x) Day #{x}
 
+
   main(role="main")
-    +day
-    +day
-    +day
+    for current_day in days
+      +day(current_day)

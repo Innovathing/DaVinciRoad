@@ -6,7 +6,7 @@ var oauth = {
   consumer_secret: 'fyGnV64yEa4Itf2ukcppDll2jYgf24cEsh4KS2GRHlYSf4NgOk',
 };
 var city = ["Toulouse", "Genova", "Cinq Terres", "Firenze", "Roma", "Ancona","Venise", "Montagnes"];
-var blog = new tumblr.Blog('magic-micky.tumblr.com', oauth);
+var blog = new tumblr.Blog('valley-vegetarian.tumblr.com', oauth);
 
 
 router.get('/', function(req, res, next) {
@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
     var yyyy = today.getFullYear();
     var todays_post = response.posts;
     var last_date=undefined;
-    var nbDay=0;
+    var nbDay=-1;
     var nbPostsForCurrentDay=0;
     todays_post.forEach(function(post,index,array) {
       
@@ -44,6 +44,7 @@ router.get('/', function(req, res, next) {
       var current_data={quote:[],text:[], images:[], timelapse:[]};
       current_data.date = days[i].date;
       current_data.city = city[nbDay-i];
+      if(current_data.city==undefined) current_data.city="undefined";
       var nbImages=0;
       var nbTimelapse=0;
       var nbText=0;
@@ -68,18 +69,18 @@ router.get('/', function(req, res, next) {
           };
       });
 
-      data[i] = current_data;
+      data[nbDay-i] = current_data;
 
     }
 
-    console.log(JSON.stringify(data,null));
-      
+    console.log(JSON.stringify(data,null));      
+    res.render('index', {days:data});
   });
   
   
   
   
-  res.send("Hello");
+  //res.send("Hello");
 });
 
 module.exports = router;

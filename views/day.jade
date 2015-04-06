@@ -1,13 +1,16 @@
 include section-photos
 include section-timelapse
 
-mixin day
+mixin day(current_day)
+  - var date = current_day.date
+  - var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
   article.section
     header
       p
-        time: Le 13 avril
-      h2 Toulouse
+        time=date.getDate() + ' ' + monthNames[date.getMonth()]
+      h2=current_day.city
 
     .section-list
-      +section-photos
+      for images in current_day.images
+        +section-photos(images)
       +section-timelapse

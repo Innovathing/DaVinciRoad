@@ -1,10 +1,6 @@
-mixin section-photos
+mixin section-photos(post)
   section.photos
     h3 Pics of Day
     .gird-photos
-      .thumbnail: img(src="http://photos.state.gov/libraries/france/45994/slideshow558/toulousebridge.jpg")
-      .thumbnail: img(src="http://data.esaip.org/52de/83f3/3b034/thumbnail/x1024-y600-tfit-k16/campus_toulouse-ville.jpg")
-      .thumbnail: img(src="http://www.royalevents.fr/medias/images/toulouse.jpg")
-      .thumbnail: img(src="http://www.royalevents.fr/medias/images/toulouse.jpg")
-      .thumbnail: img(src="http://photos.state.gov/libraries/france/45994/slideshow558/toulousebridge.jpg")
-      .thumbnail: img(src="http://data.esaip.org/52de/83f3/3b034/thumbnail/x1024-y600-tfit-k16/campus_toulouse-ville.jpg")
+      for pic in post
+        .thumbnail: img(src=pic.alt_sizes[2].url)
