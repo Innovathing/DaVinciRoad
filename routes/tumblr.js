@@ -6,7 +6,7 @@ var config = require('../config.json');
 var city = config.cities;
 var blog = new tumblr.Blog(config.tumblrUrl, config.tumblrOAuthKeys);
 
-
+var postToPostDate = [];
 router.get('/', function(req, res, next) {
   blog.posts({}, function(error, response) {
     if(error) throw new Error(error);
@@ -27,16 +27,24 @@ router.get('/', function(req, res, next) {
       if(last_date==undefined || date.getTime() != last_date.getTime()) {
         last_date = date;
         nbDay++;
-        nbPostsForCurrentDay=0;
+        nbPostsForCurrentDay = 0;
         var tmp = {date:last_date, posts:[]};
         days[nbDay]= tmp;
       }
-      days[nbDay].posts[nbPostsForCurrentDay] = post;
-      nbPostsForCurrentDay++;
+      var repost = isRepost(post.tags, nbDay);
+      if(repost>-1) {
+        if(postToPostDate[repost] == undefined) {
+          postToPostDate[repost] = {posts:[]};
+        }
+        var maxPostForDay = postToPostDate[repost].posts.length;
+        postToPostDate[repost].posts[maxPostForDay] =  post;
+      } else {
+        days[nbDay].posts[nbPostsForCurrentDay] = post;
+        nbPostsForCurrentDay++;
+      }
     });
     
     var data =[];
-
     for(var i= nbDay; i>=0; i--) {
       var daily_post = days[i].posts;
       var current_data={posts:[], timelapse:[]};
@@ -44,10 +52,16 @@ router.get('/', function(req, res, next) {
       current_data.city = city[nbDay-i];
       if(current_data.city==undefined) current_data.city="undefined";
       
+      //If there are any post to post date, add them to daily_post
+      if(postToPostDate[nbDay-i] != undefined) {
+        postToPostDate[nbDay-i].posts.forEach(function(post, index, array) {
+          daily_post[daily_post.length] = post;
+        });
+      }
       var nbTimelapse=0;
       var nbPosts=0;
       daily_post.forEach(function(post, index,array) {
-          if(post.type == "photo" && post.tags.indexOf("featured") > -1) {
+          if(post.type== "photo" && post.tags.indexOf("featured") > -1) {
             current_data.featured = post.photos[0].original_size;
           }
           else if(post.type== "photo") {
@@ -78,5 +92,16 @@ router.get('/', function(req, res, next) {
   
   //res.send("Hello");
 });
+
+function isRepost(array,tagMax) {
+  for(var i = 0; i < array.length;i++) {
+    for(var j=0;j <= tagMax;j++) {
+      if(array[i] == "day"+j || array[i] == "day " +j) {
+        return j;
+      }
+    }
+  }
+  return -1;
+}
 
 module.exports = router;
