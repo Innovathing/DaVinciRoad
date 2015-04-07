@@ -26,13 +26,11 @@ $(document).ready(function() {
 
         scrollOverflow: true,
         onLeave: function(index, nextIndex, direction){
-            var $bg = $("article:nth-child("+nextIndex+")");
-            if($bg.data("bg") != null){
-                if(!$bg.hasClass("loaded")){
-                    $bg.css("background-image","url("+$bg.data("bg")+")");
-                    $bg.addClass("loaded");
-                }
-            }
+            loadBackgroundArticle($("article:nth-child("+nextIndex+")"));
+        },
+        afterRender: function(){
+            // to fix missing onLeave function call for the first article
+            loadBackgroundArticle($("article:first"));
         }
 
     });
@@ -43,5 +41,14 @@ $(document).ready(function() {
     function toogleMenu(){
         $modal.toggleClass("background--blur");
         $("#menu").toggleClass("menu--on");
+    }
+
+    function loadBackgroundArticle($bg){
+        if($bg.data("bg") != null){
+            if(!$bg.hasClass("loaded")){
+                $bg.css("background-image","url("+$bg.data("bg")+")");
+                $bg.addClass("loaded");
+            }
+        }
     }
 });
