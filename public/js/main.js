@@ -24,18 +24,21 @@ $(document).ready(function() {
         recordHistory: false,
         menu:"#menu",
 
-        scrollOverflow: true
+        scrollOverflow: true,
+        onLeave: function(index, nextIndex, direction){
+            var $bg = $("article:nth-child("+nextIndex+")");
+            if($bg.data("bg") != null){
+                if(!$bg.hasClass("loaded")){
+                    $bg.css("background-image","url("+$bg.data("bg")+")");
+                    $bg.addClass("loaded");
+                }
+            }
+        }
+
     });
     $('.material-design-hamburger__icon').on("click",toogleMenu);
     $modal.on("click",toogleMenu);
     $('.menu-link').on("click",toogleMenu);
-
-    $('.fp-section').on('inview',function(event,visible){
-        console.log("toto");
-        if(visible==true){
-            $(this).addClass("inview");
-        }
-    });
 
     function toogleMenu(){
         $modal.toggleClass("background--blur");
