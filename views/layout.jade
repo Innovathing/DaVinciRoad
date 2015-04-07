@@ -12,12 +12,12 @@ html(class='no-js', lang='en')
       link(rel="stylesheet", type="text/css", href="/css/main.css")
       link(rel="stylesheet", type="text/css", href="/css/fonts.css", media="none", onload="if(media!='all')media='all'")
     script(src='/bower_components/modernizr/modernizr.js')
+    script(src='/bower_components/jquery/dist/jquery.min.js')
+    script(src='/bower_components/fullpage.js/vendors/jquery.slimscroll.min.js')
+    script(src='/bower_components/fullpage.js/jquery.fullPage.min.js')
   body
     include browserupgrade.jade
     block content
     block scripts
-      script(src='/bower_components/jquery/dist/jquery.min.js')
-      script(src='/bower_components/fullpage.js/vendors/jquery.slimscroll.min.js')
-      script(src='/bower_components/fullpage.js/jquery.fullPage.min.js')
       script(async, src = '/bower_components/lightbox2/js/lightbox.min.js')
       script(src='/js/main.js')
