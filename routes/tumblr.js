@@ -6,11 +6,11 @@ var config = require('../config.json');
 var city = config.cities;
 var blog = new tumblr.Blog(config.tumblrUrl, config.tumblrOAuthKeys);
 
-var postToPostDate = [];
 router.get('/', function(req, res, next) {
   blog.posts({}, function(error, response) {
     if(error) throw new Error(error);
-    console.log(response);
+
+    var postToPostDate = [];
     var days = [];
     var today = new Date();
     var dd = today.getDate();
@@ -31,7 +31,7 @@ router.get('/', function(req, res, next) {
         var tmp = {date:last_date, posts:[]};
         days[nbDay]= tmp;
       }
-      var repost = isRepost(post.tags, nbDay);
+      var repost = isRepost(post.tags, nbDay+1);
       if(repost>-1) {
         if(postToPostDate[repost] == undefined) {
           postToPostDate[repost] = {posts:[]};
