@@ -3,4 +3,5 @@ mixin section-photos(post,id)
     h3 Pics of Day
       ul.gird-photos
         for pic in post
-          li.thumbnail(data-src=pic.original_size.url,  data-title=post.caption ): img(data-original=pic.alt_sizes[3].url, height=pic.alt_sizes[3].height, width=pic.alt_sizes[3].width, class=(pic.original_size.width > pic.original_size.height) ? "portrait" : "paysage")
+          li.thumbnail(data-src=pic.original_size.url,  data-title=post.caption )
+            a(href="#"): img(data-original=pic.alt_sizes[3].url, height=pic.alt_sizes[3].height, width=pic.alt_sizes[3].width, class=(pic.original_size.width > pic.original_size.height) ? "portrait" : "paysage")

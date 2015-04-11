@@ -1,11 +1,10 @@
 mixin section-timelapse(timelapses,id)
   section.timelapse
-    .gird-photos
-      .thumbnail
-        video(controls="controls")
-          source(src=timelapses[0].video, type="video/mp4")
+    ul.gird-photos
+      li.thumbnail.video-play(data-html='<video width="100%" controls loop poster="'+timelapses[0].preview+'" name="media" src="'+timelapses[0].video+'" type="video/mp4" ></video>')
+          a(href="#"): img(data-original=timelapses[0].preview, class= "portrait")
       .thumbnail
         h3 Timelapse Day
-      .thumbnail 
-        video(controls="controls")
-          source(src=timelapses[1].video, type="video/mp4")
+      li.thumbnail.video-play(data-html='<video width="100%" controls loop poster="'+timelapses[1].preview+'" name="media" src="'+timelapses[1].video+'" type="video/mp4" ></video>')
+        a(href="#"): img(data-original=timelapses[1].preview, class= "portrait")
+  
