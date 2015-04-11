@@ -1,7 +1,6 @@
 mixin section-photos(post,id)
   section.photos
     h3 Pics of Day
-    .gird-photos
-      for pic in post
-        .thumbnail
-            a(href=pic.original_size.url, data-lightbox="image-"+id, data-title=post.caption ): img(data-original=pic.alt_sizes[3].url, height=pic.alt_sizes[3].height, width=pic.alt_sizes[3].width, class=(pic.original_size.width > pic.original_size.height) ? "portrait" : "paysage")
+      ul.gird-photos
+        for pic in post
+          li.thumbnail(data-src=pic.original_size.url,  data-title=post.caption ): img(data-original=pic.alt_sizes[3].url, height=pic.alt_sizes[3].height, width=pic.alt_sizes[3].width, class=(pic.original_size.width > pic.original_size.height) ? "portrait" : "paysage")

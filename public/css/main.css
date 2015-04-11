@@ -259,8 +259,8 @@ article header p {
 
 .thumbnail {
     position: relative;
-    width: 10em;
-    height: 10em;
+    width: 8.5em;
+    height: 8.5em;
     overflow: hidden;
     border: solid #ffffff 1px;
     box-sizing:border-box;
@@ -285,8 +285,11 @@ img.paysage {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
+    padding:0;
+}
 
+.gird-photos li {
+    margin: 0;
 }
 
 .thumbnail video {

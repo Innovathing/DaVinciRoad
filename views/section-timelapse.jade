@@ -1,7 +1,7 @@
-mixin section-timelapse(timelapses)
+mixin section-timelapse(timelapses,id)
   section.timelapse
     .gird-photos
-      .thumbnail 
+      .thumbnail
         video(controls="controls")
           source(src=timelapses[0].video, type="video/mp4")
       .thumbnail
