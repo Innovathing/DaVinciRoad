@@ -29,11 +29,14 @@ $(document).ready(function() {
             loadBackgroundArticle($("article:nth-child("+nextIndex+")"));
         },
         afterRender: function(){
+            $.fn.fullpage.setAllowScrolling(true);
+
             // to fix missing onLeave function call for the first article
             loadBackgroundArticle($("article:first"));
         }
 
     });
+    $.fn.fullpage.setAllowScrolling(false);
     $('.material-design-hamburger__icon').on("click",toogleMenu);
     $modal.on("click",toogleMenu);
     $('.menu-link').on("click",toogleMenu);
