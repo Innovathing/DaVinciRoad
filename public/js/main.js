@@ -44,6 +44,8 @@ $(document).ready(function() {
     }
 
     function loadBackgroundArticle($bg){
+        maps.$current_article = $bg;
+        maps.initMaps();
         if($bg.data("bg") != null){
             if(!$bg.hasClass("loaded")){
                 $bg.css("background-image","url("+$bg.data("bg")+")");
@@ -57,13 +59,23 @@ $(document).ready(function() {
     }
 });
 
-function initMaps(){
-    var map = new google.maps.Map(document.getElementById('map-canvas'), null);
+var maps = {
+   $current_article:null,
 
-    var ctaLayer = new google.maps.KmlLayer({
-        url: 'https://docs.google.com/uc?authuser=0&id=0BwhQUtcfqZI4dlFjeGJVa3J4OU0&export=download'
-    },{
-        preserveViewport: true
-    });
-    ctaLayer.setMap(map);
-}
+   initMaps: function(){
+       if(google != undefined && this.$current_article != null){
+           this.$current_article.find("map.unload").each(function(){
+               $(this).removeClass("unload");
+               var map = new google.maps.Map(this, null);
+
+               var ctaLayer = new google.maps.KmlLayer({
+                   url: $(this).data("src")
+               },{
+                   preserveViewport: true
+               });
+               ctaLayer.setMap(map);
+           });
+       }
+   }
+
+};
