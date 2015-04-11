@@ -64,7 +64,7 @@ router.get('/', function(req, res, next) {
             current_data.featured = post.photos[0].original_size;
           }
           else if(post.type== "photo") {
-            current_data.posts[nbPosts] = {type:"photo", data: post.photos};
+            current_data.posts[nbPosts] = {type:"photo", data: post.photos, id: post.id};
             nbPosts++;
           } else if(post.type == "video" && post.tags.indexOf("timelapse") > -1) {
             var d = {video: post.video_url, preview:post.thumbnail_url};
@@ -81,6 +81,7 @@ router.get('/', function(req, res, next) {
             current_data.posts[nbPosts] = {type:"quote", data:{from:post.source, text:post.text}};
             nbPosts++;
           };
+
       });
 
       data[nbDay-i] = current_data;
