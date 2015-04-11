@@ -50,5 +50,9 @@ $(document).ready(function() {
                 $bg.addClass("loaded");
             }
         }
+        $bg.find("img").each(function(){
+            var src = $(this).data("original");
+            $(this).attr("src",src).removeData('src');
+        });
     }
 });
