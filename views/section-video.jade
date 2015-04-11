@@ -1,7 +1,6 @@
 mixin section-video(post)
   section.video
     h3 Video time
-    .gird-photos
-      .thumbnail 
-        video(controls="controls")
-          source(src=post.video, type="video/mp4")
+    ul.gird-photos
+      li.thumbnail.video-play(data-html='<video width="100%" controls loop poster="'+post.preview+'" name="media" src="'+post.video+'" type="video/mp4" ></video>')
+        a(href="#"): img(data-original=post.preview, class= "portrait")
