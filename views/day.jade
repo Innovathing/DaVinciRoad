@@ -27,7 +27,7 @@ mixin day(current_day)
             when "quote": +section-quote(p.data)
             when "photo": +section-photos(p.data,index)
             when "video": +section-video(p.data)
+            when "link": +section-maps(p.data)
             default: +section-text(p.data)
       if current_day.timelapse.length >= 2
         +section-timelapse(current_day.timelapse)
-      +section-maps("https://docs.google.com/uc?authuser=0&id=0BwhQUtcfqZI4dlFjeGJVa3J4OU0&export=download")
