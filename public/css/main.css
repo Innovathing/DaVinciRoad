@@ -307,6 +307,16 @@ li.thumbnail.video-play a:hover::before  {
     opacity: 1;
 }
 
+section.maps {
+    padding: 0;
+}
+section.maps h3 {
+    padding: 2em 2em 0 2em;
+}
+section.maps map {
+    height:15em;
+    display: block;
+}
 
 /* ==========================================================================
    Media Queries
@@ -342,6 +352,10 @@ li.thumbnail.video-play a:hover::before  {
         width: 30em;
     }
 
+    section.maps {
+        width: 34em;
+    }
+
     .material-design-hamburger{
         display: none;
     }
@@ -358,6 +372,10 @@ li.thumbnail.video-play a:hover::before  {
     }
 }
 
+#map-canvas{
+    height: 20em;
+}
+
 @media (min-width: 40em) and (max-width: 80em){
 
 
@@ -371,6 +389,11 @@ li.thumbnail.video-play a:hover::before  {
         margin-left: auto;
         margin-right: auto;
     }
+
+    section.maps {
+        width: 34em;
+    }
+
     .material-design-hamburger{
         display: none;
     }

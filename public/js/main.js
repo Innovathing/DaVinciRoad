@@ -47,6 +47,8 @@ $(document).ready(function() {
     }
 
     function loadBackgroundArticle($bg){
+        maps.$current_article = $bg;
+        maps.initMaps();
         if($bg.data("bg") != null){
             if(!$bg.hasClass("loaded")){
                 $bg.css("background-image","url("+$bg.data("bg")+")");
@@ -65,3 +67,24 @@ function initLightGallery(){
         $('.gird-photos').lightGallery();
     });
 }
+
+var maps = {
+   $current_article:null,
+
+   initMaps: function(){
+       if(google != undefined && this.$current_article != null){
+           this.$current_article.find("map.unload").each(function(){
+               $(this).removeClass("unload");
+               var map = new google.maps.Map(this, null);
+
+               var ctaLayer = new google.maps.KmlLayer({
+                   url: $(this).data("src")
+               },{
+                   preserveViewport: true
+               });
+               ctaLayer.setMap(map);
+           });
+       }
+   }
+
+};
