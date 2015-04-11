@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var tumblr = require('tumblr');
 var config = require('../config.json');
+var url = require('url');
+var path = require('path');
 
 var city = config.cities;
 var blog = new tumblr.Blog(config.tumblrUrl, config.tumblrOAuthKeys);
@@ -76,6 +78,9 @@ router.get('/', function(req, res, next) {
           } else if(post.type == "quote") {
             current_data.posts[nbPosts] = {type:"quote", data:{from:post.source, text:post.text}};
             nbPosts++;
+          } else if(post.type=="link") {
+            current_data.posts[nbPosts] = {type:"link", data:getDlLink(post.url)};
+            nbPosts++;
           };
 
       });
@@ -103,6 +108,12 @@ function isRepost(array,tagMax) {
     }
   }
   return -1;
+}
+
+function getDlLink(link) {
+  var u = url.parse(link);
+  var id = path.basename(path.resolve(u.pathname,'..'));
+  return 'https://docs.google.com/uc?authuser=0&id=' + id + '&export=download';
 }
 
 module.exports = router;
