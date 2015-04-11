@@ -9,7 +9,7 @@ var blog = new tumblr.Blog(config.tumblrUrl, config.tumblrOAuthKeys);
 router.get('/', function(req, res, next) {
   blog.posts({}, function(error, response) {
     if(error) throw new Error(error);
-
+    
     var postToPostDate = [];
     var days = [];
     var today = new Date();
@@ -46,6 +46,7 @@ router.get('/', function(req, res, next) {
     
     var data =[];
     for(var i= nbDay; i>=0; i--) {
+      var nbTimelapse=0, nbPosts=0;
       var daily_post = days[i].posts;
       var current_data={posts:[], timelapse:[]};
       current_data.date = days[i].date;
@@ -58,8 +59,6 @@ router.get('/', function(req, res, next) {
           daily_post[daily_post.length] = post;
         });
       }
-      var nbTimelapse=0;
-      var nbPosts=0;
       daily_post.forEach(function(post, index,array) {
           if(post.type== "photo" && post.tags.indexOf("featured") > -1) {
             current_data.featured = post.photos[0].original_size;
@@ -67,9 +66,14 @@ router.get('/', function(req, res, next) {
           else if(post.type== "photo") {
             current_data.posts[nbPosts] = {type:"photo", data: post.photos};
             nbPosts++;
-          } else if(post.type == "video") {
-            current_data.timelapse[nbTimelapse] = post.video_url;
+          } else if(post.type == "video" && post.tags.indexOf("timelapse") > -1) {
+            var d = {video: post.video_url, preview:post.thumbnail_url};
+            current_data.timelapse[nbTimelapse] = d;
             nbTimelapse++;
+          } else if(post.type == "video") {
+            var d = {video: post.video_url, preview:post.thumbnail_url}
+            current_data.posts[nbPosts] = {type:"video", data: d};
+            nbPosts++;
           } else if(post.type =="text") {
             current_data.posts[nbPosts] = {type:"text", data: post.body};
             nbPosts++;
@@ -84,13 +88,9 @@ router.get('/', function(req, res, next) {
     }
 
     console.log(JSON.stringify(data,null));      
+
     res.render('index', {days:data});
   });
-  
-  
-  
-  
-  //res.send("Hello");
 });
 
 function isRepost(array,tagMax) {

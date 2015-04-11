@@ -1,0 +1,7 @@
+mixin section-video(post)
+  section.video
+    h3 Video time
+    .gird-photos
+      .thumbnail 
+        video(controls="controls")
+          source(src=post.video, type="video/mp4")

@@ -2,6 +2,7 @@ include section-photos
 include section-timelapse
 include section-quote
 include section-text
+include section-video
 
 mixin day(current_day)
   - var date = current_day.date
@@ -22,6 +23,7 @@ mixin day(current_day)
           case p.type
             when "quote": +section-quote(p.data)
             when "photo": +section-photos(p.data,index)
+            when "video": +section-video(p.data)
             default: +section-text(p.data)
       if current_day.timelapse.length >= 2
         +section-timelapse(current_day.timelapse)
