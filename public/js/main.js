@@ -56,3 +56,14 @@ $(document).ready(function() {
         });
     }
 });
+
+function initMaps(){
+    var map = new google.maps.Map(document.getElementById('map-canvas'), null);
+
+    var ctaLayer = new google.maps.KmlLayer({
+        url: 'https://docs.google.com/uc?authuser=0&id=0BwhQUtcfqZI4dlFjeGJVa3J4OU0&export=download'
+    },{
+        preserveViewport: true
+    });
+    ctaLayer.setMap(map);
+}

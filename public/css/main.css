@@ -349,6 +349,10 @@ img.paysage {
     }
 }
 
+#map-canvas{
+    height: 20em;
+}
+
 @media (min-width: 40em) and (max-width: 80em){
 
 
