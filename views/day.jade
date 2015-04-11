@@ -7,6 +7,7 @@ mixin day(current_day)
   - var date = current_day.date
   - var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
   - var bgUrl = null
+  - var index = 0;
 
   if(current_day.featured != undefined)
     - bgUrl = current_day.featured.url;
@@ -18,11 +19,12 @@ mixin day(current_day)
       h2=current_day.city
 
     .section-list
-      for p,index in current_day.posts
-          case p.type
-            when "quote": +section-quote(p.data)
-            when "photo": +section-photos(p.data,index)
-            default: +section-text(p.data)
+      for p in current_day.posts
+        - index = index + 1
+        case p.type
+          when "quote": +section-quote(p.data)
+          when "photo": +section-photos(p.data,p.id)
+          default: +section-text(p.data)
       if current_day.timelapse.length >= 2
         +section-timelapse(current_day.timelapse)
   
