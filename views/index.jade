@@ -10,12 +10,18 @@ block content
       span.material-design-hamburger__layer
 
   ul#menu.menu.menu--off
+    li(data-menuanchor="home"): a.menu-link(href="#home") Home
     - for (var x = 0; x < days.length; x++)
       li(data-menuanchor="day-"+x): a.menu-link(href="#day-"+x) Day #{x} - #{days[x].city}
       - infoDays[x]= { id:x, city:days[x].city };
 
 
   main(role="main")
+    article.section.head-section
+      #home-map.unload
+      h1 Da Vinci Road
+      p Follow our italia road trip
+
     for current_day in days
       +day(current_day)
 
