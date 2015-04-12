@@ -40,3 +40,11 @@ html(class='no-js', lang='en')
       script(async, src = '/bower_components/lightgallery/light-gallery/js/lightGallery.min.js', onload="initLightGallery();")
       script(src='/js/main.min.js')
       script(async, src = "https://maps.googleapis.com/maps/api/js?v=3.exp&key="+apiMaps+"&callback=maps.initMaps")
+      | <div id="fb-root"></div>
+      | <script>(function(d, s, id) {
+      | var js, fjs = d.getElementsByTagName(s)[0];
+      | if (d.getElementById(id)) return;
+      | js = d.createElement(s); js.id = id;
+      | js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=173721762706977";
+      | fjs.parentNode.insertBefore(js, fjs);
+      | }(document, 'script', 'facebook-jssdk'));</script>
