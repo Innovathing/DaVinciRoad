@@ -1,7 +1,4 @@
 mixin section-quote(post)
   section.quote
-    if post.from
-      h3 Quote by #{post.from}
-    else
-      h3 Quote
+    h3 #{post.from ? "Quote by " + post.from : "Anonymous quote"}
     .text #{post.text}

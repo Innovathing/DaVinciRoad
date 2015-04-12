@@ -1,7 +1,7 @@
 mixin section-photos(post,id)
   section.photos
-    h3 Pics of Day
+    h3 #{post.caption ? "Pics - " + post.caption : "Pics of the Day"}
       ul.gird-photos
-        for pic in post
-          li.thumbnail(data-src=pic.original_size.url,  data-title=post.caption )
+        for pic in post.photos
+          li.thumbnail(data-src=pic.original_size.url,  data-title=pic.caption )
             a(href="#"): img(data-original=pic.alt_sizes[3].url, height=pic.alt_sizes[3].height, width=pic.alt_sizes[3].width, class=(pic.original_size.width > pic.original_size.height) ? "portrait" : "paysage")

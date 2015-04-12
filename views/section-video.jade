@@ -1,6 +1,6 @@
 mixin section-video(post, vidNum)
   section.video
-    h3 Video time
+    h3 #{post.caption ? "Vid - " + post.caption : "Video time"}
     ul.gird-photos
       li.thumbnail.video-play(data-html="#vid"+vidNum)
         a(href="#"): img(src=post.preview)
