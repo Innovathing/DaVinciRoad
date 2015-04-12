@@ -33,9 +33,8 @@ function retrievePosts(from, limit, posts, res) {
         var days = returned[0];
         var postToPostDate = returned[1];
         var data = formatData(days, postToPostDate);
-        res.render('index', {days:data});
+        res.render('index', {days:data, apiMaps:config.mapsApi});
       }
-
 
 
   });
