@@ -1,0 +1,9 @@
+{
+  "tumblrUrl": "YourTumblrUrl.tumblr.com",
+  "cities":["CityOne", "CityTwo", "..."],
+  "tumblrOAuthKeys": {
+    "consumer_key": "tumblr_key",
+    "consumer_secret": "tumblr_secret"
+  }
+
+}
