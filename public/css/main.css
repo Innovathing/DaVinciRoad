@@ -317,6 +317,16 @@ section.maps map {
     height:15em;
     display: block;
 }
+.lg-slide p {
+    color: #fff;
+    font-family: Arial, sans-serif;
+    height: 70px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
+}
 
 /* ==========================================================================
    Media Queries

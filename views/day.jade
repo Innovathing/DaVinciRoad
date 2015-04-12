@@ -22,7 +22,6 @@ mixin day(current_day)
 
     .section-list
       for p in current_day.posts
-          - index = index + 1
           case p.type
             when "quote": +section-quote(p.data)
             when "photo": +section-photos(p.data,index)
