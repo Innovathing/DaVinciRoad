@@ -2,37 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcf8399b-cf5f-414b-a0cb-227a137e509b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/android-chrome-144x144.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/android-chrome-192x192.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/android-chrome-36x36.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/android-chrome-48x48.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/android-chrome-72x72.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/android-chrome-96x96.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-114x114.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-120x120.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-144x144.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-152x152.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-180x180.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-57x57.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-60x60.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-72x72.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-76x76.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon-precomposed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/apple-touch-icon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/favicon-16x16.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/favicon-194x194.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/favicon-32x32.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/favicon-96x96.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/mstile-144x144.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/mstile-150x150.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/mstile-310x150.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/mstile-310x310.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/mstile-70x70.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/browserconfig.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.jade" afterPath="$PROJECT_DIR$/views/layout.jade" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/main.css" afterPath="$PROJECT_DIR$/public/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/section-quote.jade" afterPath="$PROJECT_DIR$/views/section-quote.jade" />
     </list>
     <ignored path="DaVinciRoad.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,17 +28,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.017857" vertical-offset="1080" max-vertical-offset="8670">
-              <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
-              <folding>
-                <marker date="1428870525000" expanded="true" signature="500:507" placeholder="{...}" />
-                <marker date="1428870525000" expanded="true" signature="561:655" placeholder="{...}" />
-                <marker date="1428870525000" expanded="true" signature="700:730" placeholder="{...}" />
-                <marker date="1428870525000" expanded="true" signature="773:827" placeholder="{...}" />
-              </folding>
+            <state vertical-scroll-proportion="0.9230769" vertical-offset="5445" max-vertical-offset="9015">
+              <caret line="387" column="16" selection-start-line="387" selection-start-column="16" selection-end-line="387" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,12 +41,19 @@
       <file leaf-file-name="index.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/index.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="510">
+            <state vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="510">
               <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <marker date="1428870525000" expanded="true" signature="34:709" placeholder="..." />
-                <marker date="1428870525000" expanded="true" signature="201:226" placeholder="..." />
-              </folding>
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="section-quote.jade" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/section-quote.jade">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+              <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,10 +63,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="1534" max-vertical-offset="2250">
               <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-              <folding>
-                <marker date="1428870525000" expanded="true" signature="1903:1969" placeholder="{...}" />
-                <marker date="1428870525000" expanded="true" signature="1950:1965" placeholder="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,11 +78,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.jade" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/layout.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.706278" vertical-offset="0" max-vertical-offset="720">
+            <state vertical-scroll-proportion="0.0" vertical-offset="274" max-vertical-offset="720">
               <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="browserconfig.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/browserconfig.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -123,26 +103,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="829" max-vertical-offset="1890">
               <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="section-quote.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/section-quote.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="150">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="section-timelapse.jade" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/section-timelapse.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-              <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -188,12 +148,13 @@
         <option value="$PROJECT_DIR$/views/section-timelapse.jade" />
         <option value="$PROJECT_DIR$/views/index.jade" />
         <option value="$PROJECT_DIR$/public/js/main.js" />
-        <option value="$PROJECT_DIR$/public/css/main.css" />
         <option value="$PROJECT_DIR$/views/section-video.jade" />
         <option value="$PROJECT_DIR$/views/section-photos.jade" />
         <option value="$PROJECT_DIR$/views/day.jade" />
         <option value="$PROJECT_DIR$/routes/tumblr.js" />
         <option value="$PROJECT_DIR$/views/layout.jade" />
+        <option value="$PROJECT_DIR$/views/section-quote.jade" />
+        <option value="$PROJECT_DIR$/public/css/main.css" />
       </list>
     </option>
   </component>
@@ -888,54 +849,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/section-quote.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="446">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/section-timelapse.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
           <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="510">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <marker date="1428870525000" expanded="true" signature="34:709" placeholder="..." />
-            <marker date="1428870525000" expanded="true" signature="201:226" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1534" max-vertical-offset="2250">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding>
-            <marker date="1428870525000" expanded="true" signature="1903:1969" placeholder="{...}" />
-            <marker date="1428870525000" expanded="true" signature="1950:1965" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.017857" vertical-offset="1080" max-vertical-offset="8670">
-          <caret line="87" column="16" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
-          <folding>
-            <marker date="1428870525000" expanded="true" signature="500:507" placeholder="{...}" />
-            <marker date="1428870525000" expanded="true" signature="561:655" placeholder="{...}" />
-            <marker date="1428870525000" expanded="true" signature="700:730" placeholder="{...}" />
-            <marker date="1428870525000" expanded="true" signature="773:827" placeholder="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -955,10 +873,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/tumblr.js">
+    <entry file="file://$PROJECT_DIR$/public/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="829" max-vertical-offset="1890">
-          <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1534" max-vertical-offset="2250">
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -973,8 +891,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/layout.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.706278" vertical-offset="0" max-vertical-offset="720">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
           <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/browserconfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="446">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/tumblr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="829" max-vertical-offset="1890">
+          <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/section-quote.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="135">
+          <caret line="3" column="31" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="510">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9230769" vertical-offset="5445" max-vertical-offset="9015">
+          <caret line="387" column="16" selection-start-line="387" selection-start-column="16" selection-end-line="387" selection-end-column="16" />
           <folding />
         </state>
       </provider>
