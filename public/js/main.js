@@ -64,7 +64,9 @@ $(document).ready(function() {
 
 function initLightGallery(){
     $(document).ready(function() {
-        $('.gird-photos').lightGallery();
+        $('.gird-photos').lightGallery({
+          videoMaxWidth:'-1', 
+        });
     });
 }
 

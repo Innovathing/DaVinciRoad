@@ -26,7 +26,7 @@ mixin day(current_day)
           case p.type
             when "quote": +section-quote(p.data)
             when "photo": +section-photos(p.data,index)
-            when "video": +section-video(p.data)
+            when "video": +section-video(p.data,index)
             when "link": +section-maps(p.data)
             default: +section-text(p.data)
       if current_day.timelapse.length >= 2
