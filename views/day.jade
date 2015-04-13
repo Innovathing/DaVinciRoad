@@ -1,13 +1,34 @@
 include section-photos
 include section-timelapse
+include section-quote
+include section-text
+include section-video
+include section-maps
+include section-comments 
 
-mixin day
-  article.section
+mixin day(current_day)
+  - var date = current_day.date
+  - var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" ];
+  - var bgUrl = null
+  - var index = 0;
+
+  if(current_day.featured != undefined)
+    - bgUrl = current_day.featured.url;
+
+  article.section(data-bg=bgUrl)
     header
       p
-        time: Le 13 avril
-      h2 Toulouse
+        time=date.getDate() + ' ' + monthNames[date.getMonth()]
+      h2=current_day.city
 
     .section-list
-      +section-photos
-      +section-timelapse
+      for p in current_day.posts
+          case p.type
+            when "quote": +section-quote(p.data)
+            when "photo": +section-photos(p.data,index)
+            when "video": +section-video(p.data,index)
+            when "link": +section-maps(p.data)
+            default: +section-text(p.data)
+      if current_day.timelapse.length >= 2
+        +section-timelapse(current_day.timelapse)
+      +section-comments(current_day.date)

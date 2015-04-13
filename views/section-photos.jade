@@ -1,10 +1,7 @@
-mixin section-photos
+mixin section-photos(post)
   section.photos
-    h3 Pics of Day
-    .gird-photos
-      .thumbnail: img(src="http://photos.state.gov/libraries/france/45994/slideshow558/toulousebridge.jpg")
-      .thumbnail: img(src="http://data.esaip.org/52de/83f3/3b034/thumbnail/x1024-y600-tfit-k16/campus_toulouse-ville.jpg")
-      .thumbnail: img(src="http://www.royalevents.fr/medias/images/toulouse.jpg")
-      .thumbnail: img(src="http://www.royalevents.fr/medias/images/toulouse.jpg")
-      .thumbnail: img(src="http://photos.state.gov/libraries/france/45994/slideshow558/toulousebridge.jpg")
-      .thumbnail: img(src="http://data.esaip.org/52de/83f3/3b034/thumbnail/x1024-y600-tfit-k16/campus_toulouse-ville.jpg")
+    h3 #{post.caption ? "Pics - " + post.caption : "Pics of the Day"}
+      ul.gird-photos
+        for pic in post.photos
+          li.thumbnail(data-src=pic.original_size.url,  data-title=pic.caption )
+            a(href="#"): img(data-original=pic.alt_sizes[3].url, height=pic.alt_sizes[3].height, width=pic.alt_sizes[3].width, class=(pic.original_size.width > pic.original_size.height) ? "portrait" : "paysage")

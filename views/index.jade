@@ -3,16 +3,27 @@ include day
 extends layout
 
 block content
+  - var infoDays = [];
   .mask-modal
   .material-design-hamburger
     button.material-design-hamburger__icon
       span.material-design-hamburger__layer
 
   ul#menu.menu.menu--off
-    - for (var x = 0; x < 3; x++)
-      li(data-menuanchor="day-"+x): a.menu-link(href="#day-"+x) Day #{x}
+    li(data-menuanchor="home"): a.menu-link(href="#home") Home
+    - for (var x = 0; x < days.length; x++)
+      li(data-menuanchor="day-"+x): a.menu-link(href="#day-"+x) Day #{x} - #{days[x].city}
+      - infoDays[x]= { id:x, city:days[x].city };
+
 
   main(role="main")
-    +day
-    +day
-    +day
+    article.section.head-section
+      #home-map.unload
+      h1 Da Vinci Road
+      p Follow our italia road trip
+
+    for current_day in days
+      +day(current_day)
+
+
+  script var days = !{JSON.stringify(infoDays)}
