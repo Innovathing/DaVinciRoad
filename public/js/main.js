@@ -114,7 +114,8 @@ var maps = {
                    var map = new google.maps.Map(window.document.getElementById("home-map"), {
                        scrollwheel: false,
                        disableDefaultUI: true,
-                       center:day[1]
+                       center:day[1],
+                        draggable: false
                    });
 
 
